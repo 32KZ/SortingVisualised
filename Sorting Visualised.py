@@ -12,9 +12,6 @@ import time
 turtle.speed(0)
 turtle.delay(0)
 numlist = []
-rainbow =["violet","pink","indigo"]
-
-##
 
 
 # until our list is length 50,
@@ -27,6 +24,7 @@ while len(numlist) != 50:
 
 ##
 #Position Turtle
+    
 turtle.left(90)
 turtle.penup()
 turtle.goto(-250,0)
@@ -34,7 +32,7 @@ turtle.width(10)
 turtle.pendown()
 
 
-def drawgraph(rainbow,numlist):
+def refreshGraph(numlist):
   for num in numlist:
     #realign the turtle 10PX to the right.
     myxpos = turtle.xcor()
@@ -47,7 +45,7 @@ def drawgraph(rainbow,numlist):
     turtle.goto(position[0],position[1]) #Go to base of Column
     turtle.penup()
     
-    turtle.color(rainbow[random.randint(0,(len(rainbow))-1)])
+    turtle.color("red")
     #Our turtle Color is the index of a color in Rainbow of a random number
     #that does not excede the length of rainbow.
     turtle.pendown()
@@ -56,35 +54,11 @@ def drawgraph(rainbow,numlist):
     turtle.penup()
     
 
-drawgraph(rainbow,numlist)
+refreshGraph(numlist)
 #Draw Graph initailly.
 
 
 ##Start of Bubble Sort
 
-swaps = 1
-passes = 0
-while swaps != 0:
-  swaps = 0
-  for num in numlist:
-    turtle.penup()
-    turtle.goto(-250,0)
-    turtle.pendown()
 
-    try:
-      num1 = numlist[numlist.index(num)]
-      num2 = numlist[numlist.index(num)+ 1]
-    except IndexError:
-      break
-    if num1 > num2:
-      numlist[numlist.index(num2)] = num1
-      numlist[numlist.index(num1)] = num2
-      swaps += 1
-
-    passes += 1
-    if passes % 1 == 0: # refresh rate. (1 is every change, 2 is every other, and so on)
-      drawgraph(rainbow,numlist)
-     
-print(numlist)
-print(passes)
-drawgraph(rainbow,numlist)
+    
