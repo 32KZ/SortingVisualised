@@ -57,7 +57,10 @@ def drawgraph(rainbow,numlist):
     # possibly save positions of Num with Pos in a dictionary.
 
 drawgraph(rainbow,numlist)
-#Draw Graph.
+#Draw Graph initailly.
+
+
+##Start of Bubble Sort
 
 swaps = 1
 passes = 0
@@ -79,7 +82,7 @@ while swaps != 0:
       swaps += 1
 
     passes += 1
-    if passes % 200 == 0:
+    if passes % 200 == 0: # refresh rate. every 200 passes.
       drawgraph(rainbow,numlist)
      
 print(numlist)
