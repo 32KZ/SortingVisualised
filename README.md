@@ -1,6 +1,8 @@
 # About
 
-A friend of mine made a visual bubble sort in python. i am adding different sorts and usability features. 
+A friend of mine made a visual bubble sort in python. i am adding different sorts and usability features.
+
+
 ![image](https://github.com/32KZ/SortingVisualised/assets/72939329/5766e7c7-ae55-4480-816f-9fe3fbdf7973)
 
 # Planned Features 
