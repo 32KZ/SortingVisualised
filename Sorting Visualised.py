@@ -6,69 +6,15 @@ import turtle
 import random
 import time
 
-##Classes
 
-class MyTurtle:
-    def __init__(self, color="black"):
-        self.turtle = turtle.Turtle()
-        self.turtle.color(color)
-        self.turtle.speed(0)
-        
-
-    def forward(self, distance):
-        self.turtle.forward(distance)
-
-    def backward(self, distance):
-        self.turtle.backward(distance)
-
-    def left(self, angle):
-        self.turtle.left(angle)
-
-    def right(self, angle):
-        self.turtle.right(angle)
-
-    def set_color(self, color):
-        self.turtle.color(color)
-
-    def penup(self):
-        self.turtle.penup()
-
-    def pendown(self):
-        self.turtle.pendown()
-
-    def done(self):
-        turtle.done()
-
-##Functions
-        
-def refreshGraph(numlist, ourTurtle):
-  ourTurtle.turtle.goto(-250,0)
-  for num in numlist:
-    #realign the turtle 10PX to the right.
-    myxpos = ourTurtle.turtle.xcor()
-    ourTurtle.turtle.setx(myxpos + 10)
-    position = ourTurtle.turtle.pos() #Save Position of turtle in X and Y as [0],[1]
-    
-    ourTurtle.turtle.pd()
-    ourTurtle.turtle.color("white") #Clear the collumn
-    ourTurtle.turtle.forward(151)
-    ourTurtle.turtle.goto(position[0],position[1]) #Go to base of Column
-    ourTurtle.turtle.penup()
-    
-    ourTurtle.turtle.color("red")
-    #Our turtle Color is the index of a color in Rainbow of a random number
-    #that does not excede the length of rainbow.
-    ourTurtle.turtle.pendown()
-    ourTurtle.turtle.forward(num) #Draw the Number.
-    ourTurtle.turtle.goto(position[0],position[1])#goto Base of Column
-    ourTurtle.turtle.penup()
-    
-        
 ##Variables
-mainTurtle = MyTurtle("red")
+turtle.speed(0)
+turtle.delay(0)
 numlist = []
+rainbow =["violet","pink","indigo"]
 
-##Main
+##
+
 
 # until our list is length 50,
 # add a random number from 0-150 thats not already in list.
@@ -78,52 +24,73 @@ while len(numlist) != 50:
   if num not in numlist:    
     numlist.append(num)
 
+##Set View
+
+turtle.setworldcoordinates(-400, -400, 400, 400)
+
 ##
 #Position Turtle
-    
-turtle.left(90)
+turtle.left(90) # turtle by defualt faces East.
 turtle.penup()
-turtle.goto(-250,0)
+turtle.goto(-380,-320)
 turtle.width(10)
-turtle.pendown()
 
 
+def drawgraph(numlist , CellPositions):
+    x = 0
+    for num in numlist:
 
-refreshGraph(numlist, mainTurtle)
-#Draw Graph initailly.
+        #realign the turtle 10PX to the right.
+        myxpos = turtle.xcor()
+        turtle.setx(myxpos + 15)
+        CellPositions[x] = turtle.xcor() # assign index an Xcor
+        x = x+1 #increment x
+        
+        position = turtle.pos() #Save Position of turtle in X and Y as [0],[1]
+    
+        turtle.pd()
+        turtle.color("white") #Clear the collumn
+        turtle.forward(151)
+        turtle.penup()
+    
+        turtle.goto(position[0],position[1]) #Go to base of Column
+        turtle.color("red")
+        turtle.pendown()
+        turtle.forward(num) #Draw the Number.
+        turtle.goto(position[0],position[1])#goto Base of Column
+        turtle.penup()
+    turtle.goto(-380,-320)
+    return CellPositions
+
+cellPositionsDict = {
+    -1 : -380,
+    0  : -365
+    }
+
+cellPositionsDict = drawgraph(numlist , cellPositionsDict)
+
+print(cellPositionsDict)    
+
+##Main
+
+def 32quicksort(numlist)
+    if len(numlist) = 1:
+        return numlist
+    else:
+        pivot = len(numlist) // 2 
+        pivot = numlist[pivot]
+        #sort the data list
+        smaller = [x for x in numlist < pivot]
+        equal = [x for x in numlist == pivot]
+        bigger = [x for x in numlist > pivot]
+        
+        #render it in a flashy way with new function
+
+        
+        return 32quicksort(smaller) + pivot + 32quicksort(bigger)
+
+#sorted_array = quicksort(numlist)
+#print(sorted_array)
 
 
-##Start of quicksort
-
-def quicksort(numlist):
-    if len(numlist) <= 1:
-        return numlist  # Base case: if the array has 0 or 1 element, it is already sorted
-
-    pivot = numlist[len(numlist) // 2]  # Choose the pivot element (here, we select the middle element)
-
-    # Divide the array into two sub-arrays, based on the pivot element
-
-    smaller = [x for x in numlist if x < pivot]  # Elements smaller than the pivot
-    equal = [x for x in numlist if x == pivot]   # Elements equal to the pivot
-    greater = [x for x in numlist if x > pivot]  # Elements greater than the pivot
-
-    currentList = smaller + equal + greater
-
-    our_turtle = MyTurtle("red")
-    refreshGraph(currentList, our_turtle)
-    # Recursively sort the sub-arrays
-    return quicksort(smaller) + equal + quicksort(greater)
-    # Combine the sorted smaller, equal, and greater arrays
-
-sorted_array = quicksort(numlist)
-print(sorted_array)
-
-
-##TO DO
-## make it able to run different turtles at the same time
-## create turtles through classes
-## make more efficient
-## add more sorts
-## add gui
-## 
     
