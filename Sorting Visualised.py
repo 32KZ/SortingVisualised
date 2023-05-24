@@ -65,8 +65,7 @@ def refreshGraph(numlist, ourTurtle):
     
         
 ##Variables
-mainTurtle = myTurtle("red")
-mainTurtle.turtle.delay(0)
+mainTurtle = MyTurtle("red")
 numlist = []
 
 ##Main
