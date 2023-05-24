@@ -82,7 +82,7 @@ while swaps != 0:
       swaps += 1
 
     passes += 1
-    if passes % 1 == 0: # refresh rate. (1 is every change, 2 is every other, and so on)
+    if passes % 150 == 0: # refresh rate. 
       drawgraph(rainbow,numlist)
      
 print(numlist)
