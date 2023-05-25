@@ -25,16 +25,16 @@ while len(numlist) != 50:
     numlist.append(num)
 
 ##Set View
-
 turtle.setworldcoordinates(-400, -400, 400, 400)
 
-##
-#Position Turtle
-turtle.left(90) # turtle by defualt faces East.
-turtle.penup()
-turtle.goto(-380,-320)
-turtle.width(10)
 
+def resetTurtle():
+  turtle.reset()
+  turtle.setworldcoordinates(-400, -400, 400, 400)
+  turtle.left(90) # turtle by defualt faces East.
+  turtle.penup()
+  turtle.goto(-380,-320)
+  turtle.width(10)
 
 def drawgraph(numlist , CellPositions):
     x = 0
@@ -72,7 +72,7 @@ def ClearGraph(CellPos):
       turtle.fd(151)
       turtle.up()
       turtle.bk(151)
-    turtle.goto(-350,-320)
+    turtle.goto(-360,-320)
       
 
 def quicksort(numlist):
@@ -95,7 +95,7 @@ def quicksort(numlist):
 
 ##Main
 
-
+resetTurtle()
 
 cellPositionsDict = {
     -1 : -380,
@@ -107,6 +107,17 @@ cellPositionsDict = drawgraph(numlist , cellPositionsDict)
 print(cellPositionsDict)
 
 ClearGraph(cellPositionsDict)
+resetTurtle()
+
+cellPositionsDict = drawgraph(numlist , cellPositionsDict)
+
+ClearGraph(cellPositionsDict)
+resetTurtle()
+
+cellPositionsDict = drawgraph(numlist , cellPositionsDict)
+
+ClearGraph(cellPositionsDict)
+resetTurtle()
 #sorted_array = quicksort(numlist)
 #print(sorted_array)
     
