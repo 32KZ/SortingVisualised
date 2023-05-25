@@ -62,19 +62,21 @@ def drawgraph(numlist , CellPositions):
     turtle.goto(-380,-320)
     return CellPositions
 
-cellPositionsDict = {
-    -1 : -380,
-    0  : -365
-    }
 
-cellPositionsDict = drawgraph(numlist , cellPositionsDict)
+def ClearGraph(CellPos):
+    turtle.color("white")
+    for index in CellPos:
+      newXPos = CellPos[index]
+      turtle.goto(newXPos,-320)
+      turtle.pd()
+      turtle.fd(151)
+      turtle.up()
+      turtle.bk(151)
+    turtle.goto(-350,-320)
+      
 
-print(cellPositionsDict)    
-
-##Main
-
-def 32quicksort(numlist)
-    if len(numlist) = 1:
+def quicksort(numlist):
+    if len(numlist) == 1:
         return numlist
     else:
         pivot = len(numlist) // 2 
@@ -87,10 +89,24 @@ def 32quicksort(numlist)
         #render it in a flashy way with new function
 
         
-        return 32quicksort(smaller) + pivot + 32quicksort(bigger)
+        return quicksort(smaller) + pivot + quicksort(bigger)
 
+  
+
+##Main
+
+
+
+cellPositionsDict = {
+    -1 : -380,
+    0  : -365
+    }
+
+cellPositionsDict = drawgraph(numlist , cellPositionsDict)
+
+print(cellPositionsDict)
+
+ClearGraph(cellPositionsDict)
 #sorted_array = quicksort(numlist)
 #print(sorted_array)
-
-
     
