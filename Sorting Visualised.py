@@ -73,8 +73,19 @@ def ClearGraph(CellPos):
       turtle.fd(151)
       turtle.up()
       turtle.bk(151)
-    turtle.goto(-360,-320)
-      
+    #turtle.goto(-360,-320)
+###SUMMARY OF CLEARGRAPH
+#Instead of just reseting the turtle we need to make a change,
+#the ClearGraph Function allows us to select all the changed cells,
+#    (dictated by its dict input)
+# and clear them.
+# we do not need to go to start at the end, since that is resetTurtle()'s job.
+#this means that we can call this on a given range of indexes through a
+#dict structure, and it will wipe them for us to Draw.
+# with regards to Memory, the process for this is as follows.
+# Clear range > draw new data after sort > next itteration we refresh turtle.
+# this is mostly asetetic, but it feels nicer than just a reset.
+###
 
 def quicksort(numlist):
     if len(numlist) == 1:
@@ -111,8 +122,6 @@ ClearGraph(cellPositionsDict)
 resetTurtle()
 
 cellPositionsDict = drawgraph(numlist , cellPositionsDict)
-ClearGraph(cellPositionsDict)
-resetTurtle()
 #sorted_array = quicksort(numlist)
 #print(sorted_array)
     

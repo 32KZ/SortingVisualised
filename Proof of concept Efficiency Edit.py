@@ -39,7 +39,7 @@ def drawgraph(rainbow,numlist):
   for num in numlist:
     #realign the turtle 10PX to the right.
     myxpos = turtle.xcor()
-    turtle.setx(myxpos + 10)
+    turtle.setx(myxpos + 15)
     position = turtle.pos() #Save Position of turtle in X and Y as [0],[1]
     
     turtle.pd()
