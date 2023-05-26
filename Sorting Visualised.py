@@ -38,6 +38,7 @@ def resetTurtle():
 
 def drawgraph(numlist , CellPositions):
     x = 0
+    turtle.goto(-380,-320)
     for num in numlist:
 
         #realign the turtle 10PX to the right.
@@ -110,12 +111,6 @@ ClearGraph(cellPositionsDict)
 resetTurtle()
 
 cellPositionsDict = drawgraph(numlist , cellPositionsDict)
-
-ClearGraph(cellPositionsDict)
-resetTurtle()
-
-cellPositionsDict = drawgraph(numlist , cellPositionsDict)
-
 ClearGraph(cellPositionsDict)
 resetTurtle()
 #sorted_array = quicksort(numlist)

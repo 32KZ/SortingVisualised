@@ -35,6 +35,7 @@ def resetTurtle():
   turtle.width(10)
 
 def drawgraph(rainbow,numlist):
+  turtle.goto(-380,-320)
   for num in numlist:
     #realign the turtle 10PX to the right.
     myxpos = turtle.xcor()
@@ -67,9 +68,8 @@ passes = 0
 while swaps != 0:
   swaps = 0
   for num in numlist:
-    turtle.penup()
-    turtle.goto(-250,0)
-    turtle.pendown()
+
+
 
     try:
       num1 = numlist[numlist.index(num)]
@@ -83,9 +83,12 @@ while swaps != 0:
 
     passes += 1
     if passes % 150 == 0: # refresh rate. 
-      resetTurtle()
       drawgraph(rainbow,numlist)
+    if passes % 300 == 0:
+      resetTurtle()
+      
      
 print(numlist)
 print(passes)
+resetTurtle()
 drawgraph(rainbow,numlist)
