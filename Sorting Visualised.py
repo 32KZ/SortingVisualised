@@ -51,13 +51,13 @@ def drawgraph(numlist , CellPositions):
     
         turtle.pd()
         turtle.color("white") #Clear the collumn
-        turtle.forward(151)
+        turtle.forward(301)
         turtle.penup()
     
         turtle.goto(position[0],position[1]) #Go to base of Column
         turtle.color("red")
         turtle.pendown()
-        turtle.forward(num) #Draw the Number.
+        turtle.forward(num*2) #Draw the Number.
         turtle.goto(position[0],position[1])#goto Base of Column
         turtle.penup()
     turtle.goto(-380,-320)
@@ -70,9 +70,9 @@ def ClearGraph(CellPos):
       newXPos = CellPos[index]
       turtle.goto(newXPos,-320)
       turtle.pd()
-      turtle.fd(151)
+      turtle.fd(301)
       turtle.up()
-      turtle.bk(151)
+      turtle.goto(newXPos,-320)
     #turtle.goto(-360,-320)
 ###SUMMARY OF CLEARGRAPH
 #Instead of just reseting the turtle we need to make a change,

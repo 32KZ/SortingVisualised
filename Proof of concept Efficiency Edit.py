@@ -44,7 +44,7 @@ def drawgraph(rainbow,numlist):
     
     turtle.pd()
     turtle.color("white") #Clear the collumn
-    turtle.forward(151)
+    turtle.forward(301)
     turtle.goto(position[0],position[1]) #Go to base of Column
     turtle.penup()
     
@@ -52,7 +52,7 @@ def drawgraph(rainbow,numlist):
     #Our turtle Color is the index of a color in Rainbow of a random number
     #that does not excede the length of rainbow.
     turtle.pendown()
-    turtle.forward(num) #Draw the Number.
+    turtle.forward(num*2) #Draw the Number.
     turtle.goto(position[0],position[1])#goto Base of Column
     turtle.penup()
     
@@ -82,9 +82,9 @@ while swaps != 0:
       swaps += 1
 
     passes += 1
-    if passes % 150 == 0: # refresh rate. 
+    if passes % 50 == 0: # refresh rate. 
       drawgraph(rainbow,numlist)
-    if passes % 300 == 0:
+    if passes % 100 == 0:
       resetTurtle()
       
      
