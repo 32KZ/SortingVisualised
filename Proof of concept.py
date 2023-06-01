@@ -1,4 +1,4 @@
-##Original Code By Victoria Miller aka Juuls
+##Original Code By Vic
 ##Edits Made By 32KZ
 
 ##Imports
