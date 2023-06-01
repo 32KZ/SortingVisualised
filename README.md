@@ -21,7 +21,7 @@ A friend of mine made a visual bubble sort in python. i am adding different sort
 
 
 # Credits
-Original code by Victoria Miller, AKA Juuls
+Original code by Vic
 
 Changes By [32KZ](https://32kz.github.io/32kzWebsite/index.html)
 
